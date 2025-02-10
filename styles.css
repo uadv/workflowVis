@@ -1,0 +1,20 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#projcontainer {
+    outline: 1px solid red;
+    display: flex;
+    margin: 30px ;
+}
+
+.projobject {
+    margin: 30px;
+    background-color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+}
+
+#textButton {
+    margin: 10px;
+}
