@@ -31,13 +31,13 @@ function showNotes() {
     }
 }
 
-fetch('http://localhost:3000/get') // This is gathering the notes from the server (There are no notes on the server yet.)
+fetch('http://192.168.12.231:3000/get') // This is gathering the notes from the server (There are no notes on the server yet.)
     .then(response => response.json())
     .then(data => notes = data)
     .catch(error => console.error('Error:', error))
 
 async function getNotes() {
-    let receivedData = await fetch('http://localhost:3000/get') // this waits for the fetch and then will assign the notes
+    let receivedData = await fetch('http://192.168.12.231:3000/get') // this waits for the fetch and then will assign the notes
     let note = await receivedData.json()
     notes = note
     console.log("Notes Received from Server")
@@ -50,7 +50,7 @@ addStepButton.addEventListener('click' , (event) => {
     let textInput = document.getElementById("noteinp").value
     
     // This sends the note to the server: 
-    fetch('http://localhost:3000/post', {
+    fetch('http://192.168.12.231:3000/post', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },  // Important! Tell the server it's plain text
         body: JSON.stringify({note : textInput})  // Send text directly
